@@ -13,7 +13,6 @@ RUN mvn clean package -DskipTests
 
 # Package stage
 FROM openjdk:17-slim
-git 
 # Set the working directory for the application in the final image
 WORKDIR /app
 
