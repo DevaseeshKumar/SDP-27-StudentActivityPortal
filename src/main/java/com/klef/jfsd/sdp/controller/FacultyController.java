@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.klef.jfsd.sdp.model.Admin;
 import com.klef.jfsd.sdp.model.Events;
 import com.klef.jfsd.sdp.model.Faculty;
 import com.klef.jfsd.sdp.model.Student;
