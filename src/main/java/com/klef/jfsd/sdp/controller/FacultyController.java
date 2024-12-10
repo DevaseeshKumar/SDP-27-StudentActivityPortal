@@ -29,6 +29,7 @@ public class FacultyController
     public ModelAndView home() {
         ModelAndView mv = new ModelAndView();
         mv.setViewName("home");
+        System.out.println("Home is accessed");
         return mv;
     }
     
