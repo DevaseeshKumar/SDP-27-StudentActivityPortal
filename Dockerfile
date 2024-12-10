@@ -5,10 +5,10 @@ FROM maven:3.8.4-openjdk-17-slim AS build
 WORKDIR /app
 
 # Copy the pom.xml and source code into the container
-COPY pom.xml .
+COPY pom.xml . 
 COPY src ./src
 
-# Run Maven to build the project (including JAR generation)
+# Download dependencies and package the application
 RUN mvn clean package -DskipTests
 
 # Package stage
@@ -18,10 +18,11 @@ FROM openjdk:17-slim
 WORKDIR /app
 
 # Copy the JAR file from the build stage into the final image
-COPY --from=build /app/target/StudentActivityPortal-0.0.1-SNAPSHOT.jar StudentActivityPortal-0.0.1-SNAPSHOT.jar
+COPY --from=build /app/target/StudentActivityPortal-0.0.1-SNAPSHOT.jar app.jar
 
-# Expose port 8080
-EXPOSE 8080
+# Expose the port specified in application.properties
+EXPOSE 1127
+
 
 # Set the entry point to run the Spring Boot application
-ENTRYPOINT ["java", "-jar", "StudentActivityPortal-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar"]
