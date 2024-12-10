@@ -17,6 +17,7 @@ import com.klef.jfsd.sdp.model.Faculty;
 import com.klef.jfsd.sdp.model.Student;
 import com.klef.jfsd.sdp.service.FacultyService;
 
+@RequestMapping("/")
 @Controller
 public class FacultyController 
 {
