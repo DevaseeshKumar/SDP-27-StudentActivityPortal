@@ -5,8 +5,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"com.klef.jfsd.sdp.controller", "com.klef.jfsd.sdp.service"})
-
 public class StudentActivityPortalApplication {
 
 	public static void main(String[] args) {
